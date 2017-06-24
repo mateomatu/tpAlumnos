@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TpAlumnos</title>
+  </head>
+  <body>
+  <h1 style="font-size: 25px;">⦁	Trabajo práctico</h1>
+  <p>⦁	Ingresar un listado de nombres de Alumnos por pantalla. Cada vez que se ingresa un nuevo usuario, preguntar si se quiere ingresar otro utilizando la función “Confirm”. </p>
+  <p>⦁  En caso de que el usuario no quiera ingresar  otro alumno, mostrar los siguientes resultados por consola:</p>
+  <p>1) Indicar la cantidad de alumnos que se ingresaron.</p>
+  <p>2) Indicar si “maradona” vino a la clase. Hacerlo con otra función que tome un array como parámetro y retorne true o false.</p>
+  <p>3) Mostrar el listado de alumnos por pantalla de una manera legible. Hacerlo con una función que</p>
+
+  <script type="text/javascript">
+
+
+
+
+
+
+
+  var Alumnos = [];
+
+
+  var ingreseAlumno = prompt('Ingrese el nombre del alumno presente:');
+  Alumnos.push(ingreseAlumno);
+  var continuar = confirm('Desea seguir ingresando alumnos presentes?')
+
+  while (continuar) {
+    ingreseAlumno = prompt("Ingrese otro alumno");
+    Alumnos.push(ingreseAlumno);
+    continuar = confirm("Desea ingresar otro alumno?");
+  }
+
+  console.log(Alumnos);
+  console.log("La cantidad de alumnos presentes es de: " + Alumnos.length);
+
+  function buscarPibe(apellido) {
+
+    for (var i = 0; i < Alumnos.length; i++) {
+
+      if (Alumnos[i] == apellido) {
+              console.log(apellido + " vino a la clase");
+              return true;
+      } else {
+        console.log(apellido + " no vino a la clase");
+        return false;
+      }
+    }
+
+
+  }
+
+var pregunta = confirm("Desea buscar si algun alumno esta presente?")
+
+if (pregunta) {
+  var buscarAlumno = prompt("Ingrese el nombre del alumno que desee buscar");
+} else {
+  alert('Gracias por su colaboracion.')
+}
+
+buscarPibe(buscarAlumno);
+
+
+
+
+
+
+
+
+
+
+  </script>
+  </body>
+</html>
